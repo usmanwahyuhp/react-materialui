@@ -2,7 +2,7 @@ import React from 'react'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 
 import './App.css'
-import CustomBtn from './components/CustomBtn';
+import NavBar from './components/NavBar';
 
 const theme = createMuiTheme({
     palette: {
@@ -33,7 +33,7 @@ function App() {
     return (
         <div className="App">
             <ThemeProvider theme={theme}>
-                <CustomBtn txt="hello btn"/>
+                <NavBar />
             </ThemeProvider>
         </div>
     )

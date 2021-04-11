@@ -36,15 +36,43 @@ const theme = createMuiTheme({
       },
     },
   });
+
 export default class App extends Component {
   render() {
+    const classes = ({
+      wrapper: {
+        width: "65%",
+        margin: "auto",
+        textAlign: "center"
+      },
+      bigSpace: {
+        marginTop: "5rem"
+      },
+      littleSpace:{
+        marginTop: "2.5rem",
+      },
+      grid:{
+        display: "flex", 
+        justifyContent: "center",
+        alignItems: "center",
+        flexWrap: "wrap", 
+      },
+  })
     return (
       <div className="App">
             <ThemeProvider theme={theme}>
                 <NavBar />
-                <Grid icon={<SecurityIcon style={{fill: "#4360A6", height:"125", width:"125"}}/>}  title="Secure" btnTitle="Show me More" />
-                <Grid icon={<EventNoteIcon style={{fill: "#449A76", height:"125", width:"125"}}/>} title="Reliable" btnTitle="Show me More"/>
-                <Grid icon={<TrendingUpIcon style={{fill: "#D05B2D", height:"125", width:"125"}}/>}  title="Performant" btnTitle="Show me More"/>
+
+                <div style={{...classes.grid, ...classes.bigSpace}}>
+                  <Grid icon={<SecurityIcon style={{fill: "#4360A6", height:"125", width:"125"}}/>}  title="Secure" btnTitle="Show me More" />
+                  <Grid icon={<EventNoteIcon style={{fill: "#449A76", height:"125", width:"125"}}/>} title="Reliable" btnTitle="Show me More"/>
+                  <Grid icon={<TrendingUpIcon style={{fill: "#D05B2D", height:"125", width:"125"}}/>}  title="Performant" btnTitle="Show me More"/>
+                </div>
+                <div style={{...classes.grid, ...classes.littleSpace}}>  
+                  <Grid icon={<ImportExportIcon style={{fill: "#5EA780", height:"125", width:"125"}}/>}  title="Modular" btnTitle="Show me More"/>
+                  <Grid icon={<ComputerIcon style={{fill: "#E69426", height:"125", width:"125"}}/>}  title="Multi-Platform" btnTitle="Show me More"/>
+                  <Grid icon={<HttpIcon style={{fill: "#2EA09D", height:"125", width:"125"}}/>} title="Connected" btnTitle="Show me More"/>
+                </div>
             </ThemeProvider>
         </div>
     )
